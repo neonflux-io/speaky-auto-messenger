@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "Speaky Auto Messenger",
+    "version": "1.0",
+    "description": "Send customized messages to Speaky users automatically. Makes it easy to connect with language partners.",
+    "permissions": ["scripting", "tabs", "activeTab", "storage", "notifications"],
+    "host_permissions": ["https://web.speaky.com/*"],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "icon.png"
+    },
+    "icons": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://web.speaky.com/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
